@@ -13,7 +13,7 @@ export default function App() {
       {/* <SignUpScreen /> */}
       <StatusBar style="dark" />
       <Navigation />
-    <View/>
+    </View>
   );
 }
 
