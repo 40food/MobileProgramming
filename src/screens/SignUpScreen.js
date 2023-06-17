@@ -101,7 +101,10 @@ const SignInScreen = () => {
           <View style={styles.buttonContainer}>
             <Button
               title={'회원가입'}
-              onPress={onSubmit}
+              onPress={() => {
+                onSubmit;
+                navigation.goBack();
+              }}
               disabled={disabled}
               // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
             />
