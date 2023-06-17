@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { WHITE } from '../colors';
-import SettingScreen from '../screens_SY/SettingScreen';
-import SignInScreen from '../screens_SY/SignInScreen';
-import AccountScreen from '../screens_SY/AccountScreen';
-import NoticeScreen from '../screens_SY/NoticeScreen';
-import InformationScreen from '../screens_SY/InformationScreen';
-import TermScreen from '../screens_SY/TermScreen';
-import PrivacyPoliceScreen from '../screens_SY/PrivacyPolicyScreen';
+import SettingScreen from '../screens/SettingScreen';
+import SignInScreen from '../screens/SignInScreen';
+import AccountScreen from '../screens/AccountScreen';
+import NoticeScreen from '../screens/NoticeScreen';
+import InformationScreen from '../screens/InformationScreen';
+import TermScreen from '../screens/TermScreen';
+import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
 import { AuthRoutes } from './routes';
 
 const Stack = createNativeStackNavigator();
