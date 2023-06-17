@@ -43,7 +43,7 @@ const accountstyles = StyleSheet.create({
   menu: {
     fontSize: 20,
     marginTop: 10,
-    padding: 3,
+    padding: 5,
     borderBottomWidth: 1,
     borderBottomColor: '#D6D6D6',
   },
