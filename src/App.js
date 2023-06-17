@@ -5,11 +5,10 @@ import Navigation from './navigations/Navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar style="dark" />
-      <Logo />
       <Navigation />
-    </View>
+    </>
   );
 }
 
