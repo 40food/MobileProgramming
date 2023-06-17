@@ -12,9 +12,8 @@ export default function App() {
       {/* <SignInScreen /> */}
       {/* <SignUpScreen /> */}
       <StatusBar style="dark" />
-      <Logo />
       <Navigation />
-    </View>
+    <View/>
   );
 }
 
