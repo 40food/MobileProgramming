@@ -4,15 +4,17 @@ import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import Logo from './components/Logo';
 import Navigation from './navigations/Navigation';
+import SettingScreen from './screens/SettingScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      {/* <SignInScreen /> */}
       {/* <SignUpScreen /> */}
-      <StatusBar style="dark" />
-      <Navigation />
+      {/* <StatusBar style="dark" /> */}
+      <Navigation>
+        <SignInScreen />
+      </Navigation>
     </View>
   );
 }
