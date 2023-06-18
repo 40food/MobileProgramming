@@ -12,6 +12,7 @@ import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
+
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
 
@@ -65,7 +66,7 @@ const SignInScreen = () => {
               title={'로그인'}
               onPress={onSubmit}
               disabled={disabled}
-              // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
+              onPress={() => navigation.navigate(AuthRoutes.CalendarView)}
             />
           </View>
           <View style={styles.buttonWrapper}>

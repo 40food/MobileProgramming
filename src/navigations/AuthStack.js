@@ -8,6 +8,8 @@ import NoticeScreen from '../screens/NoticeScreen';
 import InformationScreen from '../screens/InformationScreen';
 import TermScreen from '../screens/TermScreen';
 import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
+import CalanderView from '../screens/Calendar/CalendarView';
+import ToDo from '../screens/Calendar/ToDo';
 import { AuthRoutes } from './routes';
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +26,8 @@ const AuthStack = () => {
       <Stack.Screen name={AuthRoutes.Setting} component={SettingScreen} />
       <Stack.Screen name={AuthRoutes.Account} component={AccountScreen} />
       <Stack.Screen name={AuthRoutes.Notice} component={NoticeScreen} />
+      <Stack.Screen name = {AuthRoutes.CalendarView} component={CalanderView}/>
+      <Stack.Screen name = {AuthRoutes.ToDo} component={ToDo}/>
       <Stack.Screen
         name={AuthRoutes.Information}
         component={InformationScreen}
