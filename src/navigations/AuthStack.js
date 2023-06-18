@@ -3,6 +3,8 @@ import { WHITE } from '../colors';
 import SettingScreen from '../screens/SettingScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import FindPWScreen from '../screens/FindPWScreen';
+import ChangePWScreen from '../screens/ChangePWScreen';
 import AccountScreen from '../screens/AccountScreen';
 import NoticeScreen from '../screens/NoticeScreen';
 import InformationScreen from '../screens/InformationScreen';
@@ -21,6 +23,8 @@ const AuthStack = () => {
     >
       <Stack.Screen name={AuthRoutes.SIGN_IN} component={SignInScreen} />
       <Stack.Screen name={AuthRoutes.SIGN_UP} component={SignUpScreen} />
+      <Stack.Screen name={AuthRoutes.Find_PW} component={FindPWScreen} />
+      <Stack.Screen name={AuthRoutes.Change_PW} component={ChangePWScreen} />
       <Stack.Screen name={AuthRoutes.Setting} component={SettingScreen} />
       <Stack.Screen name={AuthRoutes.Account} component={AccountScreen} />
       <Stack.Screen name={AuthRoutes.Notice} component={NoticeScreen} />
