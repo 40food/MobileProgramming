@@ -25,6 +25,7 @@ const AccountScreen = () => {
 
 const accountstyles = StyleSheet.create({
   header: {
+    marginTop: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
