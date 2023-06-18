@@ -24,6 +24,7 @@ import {
     import React from 'react';
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
+    import CheckBox2 from '../../components/CheckBox2';
 
 
 
@@ -130,21 +131,26 @@ import {
 
         <View style={{ flexDirection: 'row'}}>
 
-            <CheckBox
+            <View style={styles.aa}>
+            <CheckBox2 style={styles.aa}
                 onPress={() => setBlank(!isBlank)}
                 isChecked={isBlank}
+            
               />
+            </View>
 
+            <View style={{}}>
             <Input2 
                 keyboardType={KeyboardTypes.DEFAULT}
                 returnKeyType = {ReturnKeyTypes.NEXT}
                 value={email}
                 onChangeText = {(email) => setEmail(email.trim())}
             />
+            </View>
 
         </View>
 
-             <View style={styles.m}>
+             <View style={styles.mm}>
             <Button style={styles.c} title= "완료" onPress ={() => navigation.navigate(AuthRoutes.CalendarView)}/>
 
             </View>
@@ -191,6 +197,8 @@ import {
     size: {
         fontSize:20,
         fontWeight: 'bold',
+        marginTop: 6,
+
         
     },
     round:{
@@ -255,6 +263,8 @@ import {
     },
     m: {
         marginTop: 250,
+        paddingHorizontal: 40,
+
     },
     c: {
         color:'#add8e6',
@@ -264,7 +274,18 @@ import {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 40,
-    }
+    },
+    aa:{
+        marginLeft: 38,
+    },
+    bb: {
+        // marginRight:,
+    },
+    mm: {
+        marginTop: 200,
+        paddingHorizontal: 40,
+
+    },
 
   });
   

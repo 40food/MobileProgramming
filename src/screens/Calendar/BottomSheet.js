@@ -15,11 +15,9 @@ import Button2 from '../../components/Button2';
 import { BLACK, GRAY, PRIMARY, WHITE, GHOSTWHITE, LIGHTGRAY, ALICEBLUE } from '../../colors';
 import Calendar from 'react-calendar';
 import ToDo from './ToDo';
-import Logo from '../../components/Logo';
 import { AuthRoutes } from '../../navigations/routes';
 import { useNavigation } from '@react-navigation/native';
-
-
+import Logo from '../../components/Logo';
 
 
 
