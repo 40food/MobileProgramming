@@ -1,21 +1,22 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { BLACK, GHOSTWHITE, PRIMARY } from '../colors';
-import { useRecoilState } from 'recoil';
-import { dateState } from '../Atom';
+import { useNavigation } from '@react-navigation/native';
+import { MainRoutes } from '../navigations/routes';
 
 export const ButtonTypes = {
   TODO: 'TO-DO',
   DIARY: 'DIARY',
 };
 
-const WriteButton = ({ title, onPress }) => {
-  const [date, setDate] = useRecoilState(dateState);
-
+const WriteButton = ({ title }) => {
+  const navigation = useNavigation();
   return (
     <Pressable
       onPress={() => {
-        console.log(date);
+        title === ButtonTypes.TODO
+          ? navigation.navigate(MainRoutes.TODO)
+          : navigation.navigate(MainRoutes.DIARY);
       }}
       style={({ pressed }) => [
         styles.container,

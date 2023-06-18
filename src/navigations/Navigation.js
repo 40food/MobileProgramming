@@ -10,7 +10,9 @@ import NoticeScreen from '../screens/NoticeScreen';
 import InformationScreen from '../screens/InformationScreen';
 import TermScreen from '../screens/TermScreen';
 import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
-import MainScreen from '../screens/MainScreen';
+import Main from '../screens/Main';
+import Todo from '../screens/Todo';
+import Diary from '../screens/Diary';
 
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
@@ -30,7 +32,9 @@ const Navigation = () => {
       >
         {isSignedIn ? (
           <>
-            <Stack.Screen name={MainRoutes.MAIN} component={MainScreen} />
+            <Stack.Screen name={MainRoutes.MAIN} component={Main} />
+            <Stack.Screen name={MainRoutes.TODO} component={Todo} />
+            <Stack.Screen name={MainRoutes.DIARY} component={Diary} />
           </>
         ) : (
           <>

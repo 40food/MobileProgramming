@@ -10,4 +10,6 @@ export const AuthRoutes = {
 };
 export const MainRoutes = {
   MAIN: 'Main',
+  TODO: 'Todo',
+  DIARY: 'Diary',
 };

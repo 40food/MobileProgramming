@@ -13,7 +13,6 @@ const Calender = () => {
       onDayPress={(day) => {
         setSelected(day.dateString);
         setDate(day.dateString);
-        console.log(date);
       }}
       markedDates={{
         [selected]: {
