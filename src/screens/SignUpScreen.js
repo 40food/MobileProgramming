@@ -1,5 +1,4 @@
 import {
-  Image,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -11,6 +10,10 @@ import {
 import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
+import Logo from '../components/Logo';
+
+import { useNavigation } from '@react-navigation/native';
+import { AuthRoutes } from '../navigations/routes';
 
 const SignInScreen = () => {
   const [name, setName] = useState('');
@@ -19,6 +22,7 @@ const SignInScreen = () => {
   const [passwordCheck, setPasswordCheck] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [disabled2, setDisabled2] = useState(true);
+  const navigation = useNavigation();
 
   useEffect(() => {
     setDisabled(
@@ -45,10 +49,9 @@ const SignInScreen = () => {
     >
       <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
-          <Image
-            source={require('../../assets/logo.png')}
-            style={styles.image}
-          />
+          <View>
+            <Logo />
+          </View>
           <View style={styles.shortInput}>
             <Input
               title={'이름'}
@@ -98,7 +101,10 @@ const SignInScreen = () => {
           <View style={styles.buttonContainer}>
             <Button
               title={'회원가입'}
-              onPress={onSubmit}
+              onPress={() => {
+                onSubmit;
+                navigation.goBack();
+              }}
               disabled={disabled}
               // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
             />
@@ -106,15 +112,13 @@ const SignInScreen = () => {
           <View style={styles.rowWrapper}>
             <Text
               style={styles.textButton}
-              onPress={() => console.log('약관 화면으로 전환')}
-              // navigation.navigate(AuthRoutes.Account)}
+              onPress={() => navigation.navigate(AuthRoutes.Terms)}
             >
               약관
             </Text>
             <Text
               style={styles.textButton}
-              onPress={() => console.log('개인정보 정책 화면으로 전환')}
-              // navigation.navigate(AuthRoutes.Account)}
+              onPress={() => navigation.navigate(AuthRoutes.PrivacyPolicy)}
             >
               개인정보 정책
             </Text>

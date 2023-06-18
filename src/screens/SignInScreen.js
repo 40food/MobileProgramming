@@ -1,5 +1,5 @@
 import {
-  Image,
+  // Image,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -11,11 +11,15 @@ import {
 import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
+import Logo from '../components/Logo';
+import { useNavigation } from '@react-navigation/native';
+import { AuthRoutes } from '../navigations/routes';
 
 const SignInScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [disabled, setDisabled] = useState(true);
+  const navigation = useNavigation();
 
   useEffect(() => {
     setDisabled(!(email.trim() && password.trim()));
@@ -33,10 +37,13 @@ const SignInScreen = () => {
     >
       <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
-          <Image
+          <View>
+            <Logo />
+          </View>
+          {/* <Image
             source={require('../../assets/logo.png')}
             style={styles.image}
-          />
+          /> */}
           <Input
             title={'이메일'}
             placeholder="your@email.com"
@@ -71,8 +78,7 @@ const SignInScreen = () => {
             </Text>
             <Text
               style={styles.textButton}
-              onPress={() => console.log('회원가입 화면으로 전환')}
-              // navigation.navigate(AuthRoutes.Account)}
+              onPress={() => navigation.navigate(AuthRoutes.SIGN_UP)}
             >
               회원가입
             </Text>
