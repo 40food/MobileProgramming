@@ -1,14 +1,19 @@
 import { Calendar } from 'react-native-calendars';
 import { StyleSheet } from 'react-native';
 import { useState } from 'react';
+import { dateState } from '../Atom';
+import { useRecoilState } from 'recoil';
 
 const Calender = () => {
   const [selected, setSelected] = useState('');
+  const [date, setDate] = useRecoilState(dateState);
 
   return (
     <Calendar
       onDayPress={(day) => {
         setSelected(day.dateString);
+        setDate(day.dateString);
+        console.log(date);
       }}
       markedDates={{
         [selected]: {

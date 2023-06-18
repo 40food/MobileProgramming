@@ -1,11 +1,13 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Calender from '../components/Calender';
+import WriteButton, { ButtonTypes } from '../components/WriteButton';
 
 const Main = () => {
   return (
     <View>
       <Calender />
-      <Text>할 일 | 일기</Text>
+      <WriteButton title={ButtonTypes.TODO} />
+      <WriteButton title={ButtonTypes.DIARY} />
     </View>
   );
 };
