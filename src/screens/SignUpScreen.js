@@ -15,7 +15,7 @@ import Logo from '../components/Logo';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -56,7 +56,6 @@ const SignInScreen = () => {
             <Input
               title={'이름'}
               // placeholder="홍길동"
-              keyboardType={KeyboardTypes.NAME}
               returnKeyType={ReturnKeyTypes.NEXT}
               value={name}
               onChangeText={(name) => setName(name.trim())}
@@ -82,7 +81,7 @@ const SignInScreen = () => {
 
           <Input
             title={'비밀번호'}
-            returnKeyType={ReturnKeyTypes.NEXK}
+            returnKeyType={ReturnKeyTypes.NEXT}
             secureTextEntry
             value={password}
             onChangeText={(password) => setPassword(password.trim())}
@@ -103,10 +102,9 @@ const SignInScreen = () => {
               title={'회원가입'}
               onPress={() => {
                 onSubmit;
-                navigation.goBack();
+                navigation.navigate(AuthRoutes.SIGN_IN);
               }}
               disabled={disabled}
-              // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
             />
           </View>
           <View style={styles.rowWrapper}>
@@ -167,4 +165,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInScreen;
+export default SignUpScreen;
