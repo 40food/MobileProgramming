@@ -1,6 +1,11 @@
 import { atom } from 'recoil';
 
-export let dateState = atom({
+export const dateState = atom({
   key: 'date',
   default: 0,
+});
+
+export const diaryState = atom({
+  key: 'diary',
+  default: '',
 });
