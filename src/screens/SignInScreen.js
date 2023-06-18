@@ -1,5 +1,4 @@
 import {
-  // Image,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -40,10 +39,6 @@ const SignInScreen = () => {
           <View>
             <Logo />
           </View>
-          {/* <Image
-            source={require('../../assets/logo.png')}
-            style={styles.image}
-          /> */}
           <Input
             title={'이메일'}
             placeholder="your@email.com"
@@ -71,8 +66,7 @@ const SignInScreen = () => {
           <View style={styles.buttonWrapper}>
             <Text
               style={styles.textButton}
-              onPress={() => console.log('비밀번호 찾기 화면으로 전환')}
-              // navigation.navigate(AuthRoutes.Account)}
+              onPress={() => navigation.navigate(AuthRoutes.Find_PW)}
             >
               비밀번호 찾기
             </Text>
