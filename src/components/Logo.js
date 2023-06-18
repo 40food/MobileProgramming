@@ -6,7 +6,6 @@ const Logo = () => {
 
 const logostyles = StyleSheet.create({
   logo: {
-    marginTop: 40,
     width: 250,
     resizeMode: 'contain',
   },
