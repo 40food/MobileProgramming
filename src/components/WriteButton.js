@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { BLACK, GHOSTWHITE } from '../colors';
+import { BLACK, GHOSTWHITE, PRIMARY } from '../colors';
 import { useRecoilState } from 'recoil';
 import { dateState } from '../Atom';
 
@@ -35,20 +35,17 @@ WriteButton.propTypes = {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 10,
-    paddingHorizontal: 80,
+    paddingHorizontal: 60,
     paddingVertical: 15,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginVertical: 5,
+    marginHorizontal: 6,
     flexDirection: 'row',
-    backgroundColor: GHOSTWHITE.DEFAULT,
-    width: '80%',
+    backgroundColor: PRIMARY.BUTTON,
+    width: 180,
   },
   title: {
     color: BLACK,
     fontSize: 16,
     fontWeight: '700',
-    width: '150%',
   },
 });
 
