@@ -9,4 +9,7 @@ export const AuthRoutes = {
   Information: 'Information',
   Terms: 'Terms',
   PrivacyPolicy: 'PrivacyPolicy',
+  CalendarView: 'CalendarView',
+  ToDo: 'ToDo',
+
 };
