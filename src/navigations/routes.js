@@ -8,3 +8,6 @@ export const AuthRoutes = {
   Terms: 'Terms',
   PrivacyPolicy: 'PrivacyPolicy',
 };
+export const MainRoutes = {
+  MAIN: 'Main',
+};
