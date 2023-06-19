@@ -55,14 +55,13 @@ const SignInScreen = () => {
               title={'로그인'}
               onPress={onSubmit}
               disabled={disabled}
-              // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
+              onPress={() => navigation.navigate(AuthRoutes.CalendarView)}
             />
           </View>
           <View style={styles.buttonWrapper}>
             <Text
               style={styles.textButton}
-              onPress={() => console.log('비밀번호 찾기 화면으로 전환')}
-              // navigation.navigate(AuthRoutes.Account)}
+              onPress={() => navigation.navigate(AuthRoutes.Find_PW)}
             >
               비밀번호 찾기
             </Text>
