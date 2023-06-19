@@ -39,12 +39,14 @@ const SettingScreen = () => {
           >
             로그아웃
           </Text>
-          <Text style={settingstyles.menu}>
-            버전 {'                                          '} 0.0.0
-          </Text>
-          <Text style={settingstyles.menu}>
-            문의 {'                      '} ☎️ 02-000-0000
-          </Text>
+          <View style={settingstyles.menubound}>
+            <Text style={{ fontSize: 20 }}>버전</Text>
+            <Text style={{ fontSize: 20 }}>0.0.0</Text>
+          </View>
+          <View style={settingstyles.menubound}>
+            <Text style={{ fontSize: 20 }}>문의</Text>
+            <Text style={{ fontSize: 20 }}>☎️ 02-000-0000</Text>
+          </View>
         </View>
       </View>
     </>
@@ -67,6 +69,14 @@ const settingstyles = StyleSheet.create({
     marginLeft: 50,
     marginRight: 50,
     justifyContent: 'flex-start',
+  },
+  menubound: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    padding: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#D6D6D6',
   },
   menu: {
     fontSize: 20,
