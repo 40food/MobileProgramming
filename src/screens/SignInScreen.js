@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
+import Logo from '../components/Logo';
+
 
 const SignInScreen = () => {
   const [email, setEmail] = useState('');
@@ -34,6 +36,9 @@ const SignInScreen = () => {
     >
       <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
+        <View>
+            <Logo />
+          </View>
           <Input
             title={'이메일'}
             placeholder="your@email.com"
