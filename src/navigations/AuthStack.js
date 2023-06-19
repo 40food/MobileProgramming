@@ -10,6 +10,10 @@ import TermScreen from '../screens/TermScreen';
 import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
 import CalanderView from '../screens/Calendar/CalendarView';
 import ToDo from '../screens/Calendar/ToDo';
+<<<<<<< Updated upstream
+=======
+import Diary3 from '../screens/Diary3';
+>>>>>>> Stashed changes
 import { AuthRoutes } from './routes';
 
 const Stack = createNativeStackNavigator();
