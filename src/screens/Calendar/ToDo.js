@@ -20,7 +20,6 @@ import {
     import Input2 from '../../components/input2';
     import { useRef } from 'react';
     // import Button from '../../components/button';
-    // import CheckBox from '@react-native-community/checkbox';
     import React from 'react';
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
