@@ -13,3 +13,8 @@ export const AuthRoutes = {
   ToDo: 'ToDo',
 
 };
+export const MainRoutes = {
+  MAIN: 'Main',
+  TODO: 'Todo',
+  DIARY: 'Diary',
+};
