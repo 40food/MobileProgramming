@@ -24,9 +24,7 @@ import {
     import React from 'react';
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
-    import CheckBox2 from '../../components/CheckBox2';
-
-
+    import CheckBox2 from '../../components/CheckbBox2';
 
 
 
@@ -277,9 +275,10 @@ import {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 40,
+        marginTop:1
     },
     aa:{
-        marginLeft: 38,
+        marginLeft: 35,
     },
     bb: {
         // marginRight:,
@@ -293,4 +292,5 @@ import {
   });
   
   export default ToDo;
+
   
