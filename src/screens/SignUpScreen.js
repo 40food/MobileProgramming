@@ -11,24 +11,31 @@ import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
-
+import { CheckBox } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
+  const [checked, setChecked] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [disabled2, setDisabled2] = useState(true);
   const navigation = useNavigation();
 
   useEffect(() => {
     setDisabled(
-      !(name.trim() && email.trim() && password.trim() && passwordCheck.trim())
+      !(
+        name.trim() &&
+        email.trim() &&
+        password.trim() &&
+        passwordCheck.trim() &&
+        checked == true
+      )
     );
-  }, [name, email, password, passwordCheck]);
+  }, [name, email, password, passwordCheck, checked]);
   useEffect(() => {
     setDisabled2(!email.trim());
   }, [email]);
@@ -41,6 +48,7 @@ const SignInScreen = () => {
     Keyboard.dismiss();
     console.log('DuplicationCheck:', email);
   };
+  const toggleCheckbox = () => setChecked(!checked);
 
   return (
     <KeyboardAvoidingView
@@ -56,7 +64,6 @@ const SignInScreen = () => {
             <Input
               title={'이름'}
               // placeholder="홍길동"
-              keyboardType={KeyboardTypes.NAME}
               returnKeyType={ReturnKeyTypes.NEXT}
               value={name}
               onChangeText={(name) => setName(name.trim())}
@@ -79,10 +86,9 @@ const SignInScreen = () => {
               </View>
             </View>
           </View>
-
           <Input
             title={'비밀번호'}
-            returnKeyType={ReturnKeyTypes.NEXK}
+            returnKeyType={ReturnKeyTypes.NEXT}
             secureTextEntry
             value={password}
             onChangeText={(password) => setPassword(password.trim())}
@@ -98,15 +104,22 @@ const SignInScreen = () => {
             }
             onSubmitEditing={onSubmit}
           />
+          <CheckBox
+            title="이용약관 및 개인정보 정책에 동의합니다."
+            checked={checked}
+            onPress={toggleCheckbox}
+            iconType="material-community"
+            checkedIcon="checkbox-outline"
+            uncheckedIcon={'checkbox-blank-outline'}
+          />
           <View style={styles.buttonContainer}>
             <Button
               title={'회원가입'}
               onPress={() => {
                 onSubmit;
-                navigation.goBack();
+                navigation.navigate(AuthRoutes.SIGN_IN);
               }}
               disabled={disabled}
-              // onPress={() => navigation.navigate(AuthRoutes.CALENDAR_View)}
             />
           </View>
           <View style={styles.rowWrapper}>
@@ -167,4 +180,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInScreen;
+export default SignUpScreen;

@@ -53,6 +53,7 @@ const NoticeScreen = () => {
 
 const noticestyles = StyleSheet.create({
   header: {
+    marginTop: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },

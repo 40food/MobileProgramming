@@ -31,6 +31,7 @@ const InformationScreen = () => {
 
 const infostyles = StyleSheet.create({
   header: {
+    marginTop: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
