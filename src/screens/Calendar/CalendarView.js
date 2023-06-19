@@ -10,6 +10,8 @@ import { AuthRoutes } from '../../navigations/routes';
 import Day from 'react-native-calendars/src/calendar/day';
 import Logo from '../../components/Logo';
 import Gear from '../../components/Gear';
+import SwitchSelector from "react-native-switch-selector";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function CalanderView() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -47,6 +49,13 @@ function CalanderView() {
     },
   };
 
+  const options = [
+    { label: "할일", value: "todo", selectedBackgroundColor: "#0097e6",},
+    { label: "일기", value: "diary" },
+
+  
+  ];
+
   return (
     <View>
       <View style={styles3.cc}>
@@ -70,6 +79,34 @@ function CalanderView() {
         }}
         onDayPress={(day) => navigation.navigate(AuthRoutes.ToDo)}
       />
+
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+
+
+      <SwitchSelector 
+       backgroundColor={"#f5f5f5"}
+       buttonColor="lightskyblue"
+       fontColor="black"
+       selectedFontColor="black"
+       fontSize={30}
+       options={options}
+       initial={1}
+       buttonMargin={10}
+       borderWidth={3}
+       borderColor="black"
+       height={70}
+       hasPadding
+       bold
+       style={{ transform: [{ scaleX: .6 }, { scaleY: .6 }] }}
+
+      //  height={10}
+        onPress={value => console.log(`Call onPress with value: ${value}`)}      
+      />
+
 
       <View style={styles.container}></View>
     </View>

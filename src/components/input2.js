@@ -40,26 +40,31 @@ Input2.displayName = "Input2";
 const defaultStyles = StyleSheet.create({
   container: {
     width: "50%",
-    marginRight: 10,
-    // justifyContent: 'center'
+    // marginRight: 100,
+    marginRight: 20,
+    justifyContent: 'flex-start',
+    marginLeft: 3,
+    
 
   },
   title: {
-    marginBottom: 4,
-    fontWeight: "100",
+    marginBottom: 17,
+    fontWeight: "700",
+    fontSize: 16,
+    width:'150%',
+    
   },
   input: {
     // flexDirection: "row",
-
     borderBottomWidth: 2,
-    borderRadius: 1,
-    height: 15,
+    // borderRadius: 1,
+    // height: 15,
     // justifyContent: 'center'
     // paddingHorizontal: 10,
 
   },
   icon: {
-    paddingHorizontal:100,
+    paddingHorizontal:300,
     // position: "absolute",
     // left: 8,
     // height: "100%",
