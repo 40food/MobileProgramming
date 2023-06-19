@@ -33,7 +33,12 @@ const SettingScreen = () => {
           </Text>
         </View>
         <View style={settingstyles.bottom}>
-          <Text style={settingstyles.menu}>로그아웃</Text>
+          <Text
+            style={settingstyles.menu}
+            onPress={() => navigation.navigate(AuthRoutes.SIGN_IN)}
+          >
+            로그아웃
+          </Text>
           <Text style={settingstyles.menu}>
             버전 {'                                          '} 0.0.0
           </Text>
