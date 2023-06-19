@@ -3,16 +3,24 @@ import { StyleSheet, View } from 'react-native';
 import SignInScreen from './screens/SignInScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import Logo from './components/Logo';
-import Navigation from './navigations/Navigation';
+import CalanderView from './screens/Calendar/CalendarView';
 import SettingScreen from './screens/SettingScreen';
+import Navigation from './navigations/Navigation';
+import { RecoilRoot } from 'recoil';
+
+
 
 export default function App() {
   return (
+    <RecoilRoot>
     <View style={styles.container}>
       <StatusBar style="auto" />
-
-      <Navigation/>      
+      <Navigation>
+        <SignInScreen />
+        <CalanderView/>
+      </Navigation>
     </View>
+    </RecoilRoot>
   );
 }
 

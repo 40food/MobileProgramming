@@ -5,28 +5,38 @@ import {
   Pressable,
   StyleSheet,
   View,
-  Text,
 } from 'react-native';
 import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
+import Logo from '../components/Logo';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
-import Logo from '../components/Logo';
 
-
-const SignInScreen = () => {
+const ChangePWScreen = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [newPasswordCheck, setNewPasswordCheck] = useState('');
   const [disabled, setDisabled] = useState(true);
   const navigation = useNavigation();
 
   useEffect(() => {
-    setDisabled(!(email.trim() && password.trim()));
-  }, [email, password]);
+    setDisabled(
+      !(
+        name.trim() &&
+        email.trim() &&
+        password.trim() &&
+        newPassword.trim() &&
+        newPasswordCheck.trim()
+      )
+    );
+  }, [name, email, password, newPassword, newPasswordCheck]);
 
   const onSubmit = () => {
     Keyboard.dismiss();
+    console.log(name, email, password, newPassword, newPasswordCheck);
   };
 
   return (
@@ -36,9 +46,16 @@ const SignInScreen = () => {
     >
       <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
-        <View>
+          <View>
             <Logo />
           </View>
+          <Input
+            title={'이름'}
+            // placeholder="홍길동"
+            returnKeyType={ReturnKeyTypes.NEXT}
+            value={name}
+            onChangeText={(name) => setName(name.trim())}
+          />
           <Input
             title={'이메일'}
             placeholder="your@email.com"
@@ -49,33 +66,39 @@ const SignInScreen = () => {
           />
           <Input
             title={'비밀번호'}
-            returnKeyType={ReturnKeyTypes.DONE}
+            returnKeyType={ReturnKeyTypes.NEXT}
             secureTextEntry
             value={password}
             onChangeText={(password) => setPassword(password.trim())}
+            // onSubmitEditing={onSubmit}
+          />
+          <Input
+            title={'새 비밀번호'}
+            returnKeyType={ReturnKeyTypes.NEXT}
+            secureTextEntry
+            value={newPassword}
+            onChangeText={(newPassword) => setNewPassword(newPassword.trim())}
+            // onSubmitEditing={onSubmit}
+          />
+          <Input
+            title={'새 비밀번호 확인'}
+            returnKeyType={ReturnKeyTypes.DONE}
+            secureTextEntry
+            value={newPasswordCheck}
+            onChangeText={(newPasswordCheck) =>
+              setNewPasswordCheck(newPasswordCheck.trim())
+            }
             onSubmitEditing={onSubmit}
           />
           <View style={styles.buttonContainer}>
             <Button
-              title={'로그인'}
-              onPress={onSubmit}
+              title={'비밀번호 변경하기'}
+              onPress={() => {
+                onSubmit;
+                navigation.navigate(AuthRoutes.SIGN_IN);
+              }}
               disabled={disabled}
-              onPress={() => navigation.navigate(AuthRoutes.CalendarView)}
             />
-          </View>
-          <View style={styles.buttonWrapper}>
-            <Text
-              style={styles.textButton}
-              onPress={() => navigation.navigate(AuthRoutes.Find_PW)}
-            >
-              비밀번호 찾기
-            </Text>
-            <Text
-              style={styles.textButton}
-              onPress={() => navigation.navigate(AuthRoutes.SIGN_UP)}
-            >
-              회원가입
-            </Text>
           </View>
         </View>
       </Pressable>
@@ -89,26 +112,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
-    width: 200,
-    height: 100,
-    marginBottom: 30,
-  },
   buttonContainer: {
     width: '100%',
     marginTop: 30,
     paddingHorizontal: 20,
   },
-  buttonWrapper: {
-    marginTop: 30,
-    flexDirection: 'row',
-  },
-  textButton: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginHorizontal: 30,
-    justifyContent: 'space-evenly',
-  },
 });
 
-export default SignInScreen;
+export default ChangePWScreen;
