@@ -25,7 +25,6 @@ import {
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
     import CheckBox2 from '../../components/CheckbBox2';
-    import { CheckBox3 } from '@rneui/themed';
 
 
 
@@ -92,8 +91,8 @@ import {
              </View>
 
              <View style={styles.flexDirection}>
-
-            <CheckBox 
+    
+            <CheckBox
                 onPress={() => setShopping(!isShop)}
                 title="장보기"
                 isChecked={isShop}

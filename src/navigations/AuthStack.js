@@ -12,8 +12,6 @@ import TermScreen from '../screens/TermScreen';
 import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
 import CalanderView from '../screens/Calendar/CalendarView';
 import ToDo from '../screens/Calendar/ToDo';
-// import Diary from '../screens/Diary2';
-import Diary from '../screens/Diary';
 import Diary3 from '../screens/Diary3';
 import { AuthRoutes } from './routes';
 

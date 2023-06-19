@@ -15,12 +15,9 @@ import Button2 from '../../components/Button2';
 import { BLACK, GRAY, PRIMARY, WHITE, GHOSTWHITE, LIGHTGRAY, ALICEBLUE } from '../../colors';
 import Calendar from 'react-calendar';
 import ToDo from './ToDo';
-import Logo from '../../components/Logo';
 import { AuthRoutes } from '../../navigations/routes';
 import { useNavigation } from '@react-navigation/native';
-// import { useNavigation } from '@react-navigation/native';
-import { Navigation } from 'react-calendar';
-
+import Logo from '../../components/Logo';
 
 
 
@@ -215,6 +212,8 @@ const BottomSheet = (props) => {
                         title="📅날짜 바꾸기"
                         // onPress={pressButton}
                     ></Button2>     
+                     
+                    {/* <Calendar></Calendar>*/}
                 
                 </Animated.View>
                   
