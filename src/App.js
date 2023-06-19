@@ -10,15 +10,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-<<<<<<< Updated upstream
-      {/* <SignUpScreen /> */}
-      {/* <StatusBar style="dark" /> */}
-      <Navigation>
-        <SignInScreen />
-      </Navigation>
-=======
+
       <Navigation/>      
->>>>>>> Stashed changes
     </View>
   );
 }

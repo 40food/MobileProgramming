@@ -24,12 +24,9 @@ import {
     import React from 'react';
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
-<<<<<<< Updated upstream
     import CheckBox2 from '../../components/CheckBox2';
 
-=======
-    import CheckBox2 from '../../components/CheckbBox2';
->>>>>>> Stashed changes
+
 
 
 
