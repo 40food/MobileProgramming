@@ -12,16 +12,21 @@ import { dateState, diaryState } from '../Atom';
 import { GRAY, PRIMARY } from '../colors';
 import { useNavigation } from '@react-navigation/native';
 import { MainRoutes } from '../navigations/routes';
+import { useEffect, useState } from 'react';
 
 const Diary = () => {
   const [date, setDate] = useRecoilState(dateState);
   const [diary, setDiary] = useRecoilState(diaryState);
+  const [text, setText] = useState(diary.content);
   const navigation = useNavigation();
 
-  function submit() {
-    console.log(diary);
+  const submit = () => {
+    setDiary({
+      date: date,
+      content: text,
+    });
     navigation.navigate(MainRoutes.MAIN);
-  }
+  };
 
   return (
     <KeyboardAvoidingView
@@ -35,8 +40,8 @@ const Diary = () => {
           multiline
           placeholder="오늘 어땠나요?"
           placeholderTextColor={GRAY.DEFAULT}
-          value={diary}
-          onChangeText={(diary) => setDiary(diary)}
+          value={text}
+          onChangeText={(text) => setText(text)}
         />
         <Button title="submit" onPress={submit} />
       </View>

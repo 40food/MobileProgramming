@@ -11,8 +11,12 @@ const Calender = () => {
   return (
     <Calendar
       onDayPress={(day) => {
-        setSelected(day.dateString);
-        setDate(day.dateString);
+        setSelected(() => {
+          return day.dateString;
+        });
+        setDate(() => {
+          return day.dateString;
+        });
       }}
       markedDates={{
         [selected]: {

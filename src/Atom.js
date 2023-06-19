@@ -7,5 +7,5 @@ export const dateState = atom({
 
 export const diaryState = atom({
   key: 'diary',
-  default: '',
+  default: {},
 });
