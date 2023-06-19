@@ -12,7 +12,11 @@ import TermScreen from '../screens/TermScreen';
 import PrivacyPoliceScreen from '../screens/PrivacyPolicyScreen';
 import CalanderView from '../screens/Calendar/CalendarView';
 import ToDo from '../screens/Calendar/ToDo';
+// import Diary from '../screens/Diary2';
+import Diary from '../screens/Diary';
+import Diary3 from '../screens/Diary3';
 import { AuthRoutes } from './routes';
+
 
 const Stack = createNativeStackNavigator();
 const AuthStack = () => {
@@ -32,6 +36,10 @@ const AuthStack = () => {
       <Stack.Screen name={AuthRoutes.Notice} component={NoticeScreen} />
       <Stack.Screen name = {AuthRoutes.CalendarView} component={CalanderView}/>
       <Stack.Screen name = {AuthRoutes.ToDo} component={ToDo}/>
+      <Stack.Screen name = {AuthRoutes.Diary3} component={Diary3}/>
+
+
+
       <Stack.Screen
         name={AuthRoutes.Information}
         component={InformationScreen}

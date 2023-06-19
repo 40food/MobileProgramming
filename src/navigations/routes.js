@@ -11,6 +11,8 @@ export const AuthRoutes = {
   PrivacyPolicy: 'PrivacyPolicy',
   CalendarView: 'CalendarView',
   ToDo: 'ToDo',
+  Diary: 'Diary',
+  Diary3: 'Diary3',
 
 };
 export const MainRoutes = {

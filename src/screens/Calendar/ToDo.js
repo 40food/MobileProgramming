@@ -276,10 +276,10 @@ import {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 40,
-        marginBottom:10
+        marginTop:1
     },
     aa:{
-        marginLeft: 38,
+        marginLeft: 35,
     },
     bb: {
         // marginRight:,
