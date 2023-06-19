@@ -10,8 +10,6 @@ import {
 import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
-import Logo from '../components/Logo';
-
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
 
@@ -27,7 +25,6 @@ const SignInScreen = () => {
 
   const onSubmit = () => {
     Keyboard.dismiss();
-    console.log(email, password);
   };
 
   return (
@@ -37,9 +34,6 @@ const SignInScreen = () => {
     >
       <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
-          <View>
-            <Logo />
-          </View>
           <Input
             title={'이메일'}
             placeholder="your@email.com"
