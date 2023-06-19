@@ -8,18 +8,13 @@ import SettingScreen from './screens/SettingScreen';
 import Navigation from './navigations/Navigation';
 import { RecoilRoot } from 'recoil';
 
-
-
 export default function App() {
   return (
     <RecoilRoot>
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Navigation>
-        <SignInScreen />
-        <CalanderView/>
-      </Navigation>
-    </View>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <Navigation />
+      </View>
     </RecoilRoot>
   );
 }
