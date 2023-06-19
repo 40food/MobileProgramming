@@ -30,18 +30,20 @@ import {
 
 
   const ToDo = (props) => {
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [disabled, setDisabled] = useState(true);
     const navigation = useNavigation();
+    const [todo, setTodo] = useState('');
   
     useEffect(() => {
-      setDisabled(!(email.trim() && password.trim()));
-    }, [email, password]);
+      setDisabled(!(todo.trim() && password.trim()));
+    }, [todo, password]);
+
+
   
     const onSubmit = () => {
       Keyboard.dismiss();
-      console.log(email, password);
     };
   
 
@@ -143,8 +145,8 @@ import {
             <Input2 
                 keyboardType={KeyboardTypes.DEFAULT}
                 returnKeyType = {ReturnKeyTypes.NEXT}
-                value={email}
-                onChangeText = {(email) => setEmail(email.trim())}
+                value={todo}
+                onChangeText = {(todo) => setTodo(todo.trim())}
             />
             </View>
 

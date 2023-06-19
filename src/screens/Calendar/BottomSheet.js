@@ -205,6 +205,8 @@ const BottomSheet = (props) => {
                         title="📅날짜 바꾸기"
                         // onPress={pressButton}
                     ></Button2>     
+                     
+                    {/* <Calendar></Calendar>*/}
                 
                 </Animated.View>
                   
