@@ -16,7 +16,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Navigation>
-        {/* <SignInScreen /> */}
+        <SignInScreen />
         <CalanderView/>
       </Navigation>
     </View>

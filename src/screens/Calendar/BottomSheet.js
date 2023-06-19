@@ -18,6 +18,8 @@ import ToDo from './ToDo';
 import Logo from '../../components/Logo';
 import { AuthRoutes } from '../../navigations/routes';
 import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
+import { Navigation } from 'react-calendar';
 
 
 
@@ -28,6 +30,8 @@ const BottomSheet = (props) => {
     const { modalVisible, setModalVisible } = props;
     const screenHeight = Dimensions.get("screen").height;
     const panY = useRef(new Animated.Value(screenHeight)).current;
+    const navigation = useNavigation();
+
     const translateY = panY.interpolate({
         inputRange: [-1, 0, 1],
         outputRange: [0, 0, 1],
@@ -200,7 +204,11 @@ const BottomSheet = (props) => {
                     style={{...styles.bottomSheetContainer, transform: [{ translateY: translateY }]}}
                     {...panResponders.panHandlers}
                 >
-                     <Button2 title="✏️수정하기" ></Button2>
+                     <Button2 
+                        title="✏️수정하기"
+                        onPress={closeModal}
+
+                        ></Button2>
                      <Button2 title="🗑삭제하기"></Button2>
                      <Button2 title="🗑미완료 할일 삭제하기"></Button2>
                      <Button2 

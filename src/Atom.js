@@ -9,3 +9,9 @@ export const diaryState = atom({
   key: 'diary',
   default: {},
 });
+
+
+export const deleteState = atom({
+  key: 'delete',
+  default: {},
+})

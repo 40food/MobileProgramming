@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         width: 20,
         marginTop: 28,
-        marginHorizontal: 5,
+        // marginHorizontal: 5,
     },
     title: {
         fontSize: 18,
         color: "#000",
-        marginLeft: 5,
+        // marginLeft: 500,
         fontWeight: "500",
 
     },
