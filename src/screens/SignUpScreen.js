@@ -11,7 +11,7 @@ import Input, { KeyboardTypes, ReturnKeyTypes } from '../components/Input';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
-
+import { CheckBox } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
 
@@ -20,15 +20,22 @@ const SignUpScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
+  const [checked, setChecked] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [disabled2, setDisabled2] = useState(true);
   const navigation = useNavigation();
 
   useEffect(() => {
     setDisabled(
-      !(name.trim() && email.trim() && password.trim() && passwordCheck.trim())
+      !(
+        name.trim() &&
+        email.trim() &&
+        password.trim() &&
+        passwordCheck.trim() &&
+        checked == true
+      )
     );
-  }, [name, email, password, passwordCheck]);
+  }, [name, email, password, passwordCheck, checked]);
   useEffect(() => {
     setDisabled2(!email.trim());
   }, [email]);
@@ -41,6 +48,7 @@ const SignUpScreen = () => {
     Keyboard.dismiss();
     console.log('DuplicationCheck:', email);
   };
+  const toggleCheckbox = () => setChecked(!checked);
 
   return (
     <KeyboardAvoidingView
@@ -78,7 +86,6 @@ const SignUpScreen = () => {
               </View>
             </View>
           </View>
-
           <Input
             title={'비밀번호'}
             returnKeyType={ReturnKeyTypes.NEXT}
@@ -96,6 +103,14 @@ const SignUpScreen = () => {
               setPasswordCheck(passwordCheck.trim())
             }
             onSubmitEditing={onSubmit}
+          />
+          <CheckBox
+            title="이용약관 및 개인정보 정책에 동의합니다."
+            checked={checked}
+            onPress={toggleCheckbox}
+            iconType="material-community"
+            checkedIcon="checkbox-outline"
+            uncheckedIcon={'checkbox-blank-outline'}
           />
           <View style={styles.buttonContainer}>
             <Button
