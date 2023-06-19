@@ -15,11 +15,11 @@ import Button2 from '../../components/Button2';
 import { BLACK, GRAY, PRIMARY, WHITE, GHOSTWHITE, LIGHTGRAY, ALICEBLUE } from '../../colors';
 import Calendar from 'react-calendar';
 import ToDo from './ToDo';
+import Logo from '../../components/Logo';
 import { AuthRoutes } from '../../navigations/routes';
 import { useNavigation } from '@react-navigation/native';
-import Logo from '../../components/Logo';
-
-
+// import { useNavigation } from '@react-navigation/native';
+// import { Navigation } from 'react-calendar';
 
 
 
@@ -204,7 +204,7 @@ const BottomSheet = (props) => {
                      <Button2 
                         title="✏️수정하기"
                         onPress={closeModal}
-
+                        
                         ></Button2>
                      <Button2 title="🗑삭제하기"></Button2>
                      <Button2 title="🗑미완료 할일 삭제하기"></Button2>
@@ -212,8 +212,6 @@ const BottomSheet = (props) => {
                         title="📅날짜 바꾸기"
                         // onPress={pressButton}
                     ></Button2>     
-                     
-                    {/* <Calendar></Calendar>*/}
                 
                 </Animated.View>
                   

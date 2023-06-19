@@ -10,7 +10,6 @@ import { AuthRoutes } from '../../navigations/routes';
 import Day from 'react-native-calendars/src/calendar/day';
 import Logo from '../../components/Logo';
 import Gear from '../../components/Gear';
-import SwitchSelector from "react-native-switch-selector";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { TouchableOpacity } from 'react-native';
 

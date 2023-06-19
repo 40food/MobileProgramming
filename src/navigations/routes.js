@@ -15,8 +15,3 @@ export const AuthRoutes = {
   Diary3: 'Diary3',
 
 };
-export const MainRoutes = {
-  MAIN: 'Main',
-  TODO: 'Todo',
-  DIARY: 'Diary',
-};
