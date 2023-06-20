@@ -13,6 +13,9 @@ import { AuthRoutes } from '../../navigations/routes';
 import BottomSheet from './BottomSheet';
 import CheckBox from '../../components/Checkbox';
 import CheckBox2 from '../../components/CheckbBox2';
+import { useRecoilState } from 'recoil';
+import { dateState } from '../../Atom';
+import { PRIMARY } from '../../colors';
 
 
 const STORAGE_KEY = "@toDos";
@@ -23,6 +26,8 @@ const STORAGE_KEY = "@toDos";
 //   const travle = () => setWorking(false);
   const work = () => setWorking(true);
   const [checked, setChecked] = React.useState(false);
+
+  const [date, setDate] = useRecoilState(dateState);
 
   const navigation = useNavigation();
   const [toDos, setToDos] = useState({});
@@ -119,6 +124,8 @@ const STORAGE_KEY = "@toDos";
         </View>
       {/* </View> */}
      
+      <Text style={styles.date}>{date}</Text>
+
 
       <ScrollView>
         {
@@ -249,6 +256,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     
 },
+date: {
+    fontSize: 18,
+    fontWeight: 600,
+    color: PRIMARY.DEFAULT,
+    marginBottom: 20,
+    marginLeft:130,
+    marginTop: 5,
+  },
 
 });
 
