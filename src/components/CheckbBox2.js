@@ -24,8 +24,9 @@ const styles = StyleSheet.create({
         // alignItems: "center",
         flexDirection: "row",
         width: 20,
-        marginTop: 28,
-        marginHorizontal: 5,
+        // marginTop: 20,
+        marginHorizontal: 45,
+        marginBottom:120,
     },
     title: {
         fontSize: 18,

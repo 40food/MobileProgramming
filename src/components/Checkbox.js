@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View,  } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
   
@@ -10,7 +10,7 @@ const CheckBox = (props) => {
         <View style={styles.container}>
             <Pressable onPress={props.onPress}>
                 <MaterialCommunityIcons 
-                    name={iconName} size={24} color="#000" />
+                    name={iconName} size={24} color="black" />
             </Pressable>
             <Text style={styles.title}>{props.title}</Text>
         </View>
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
         // justifyContent: "flex-start",
         // alignItems: "center",
         flexDirection: "row",
-        width: 250,
-        marginTop: 30,
+        width: 20,
+        // marginTop: 0,
         marginHorizontal: 5,
     },
     title: {
