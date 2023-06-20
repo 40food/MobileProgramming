@@ -12,6 +12,8 @@ import Logo from '../../components/Logo';
 import Gear from '../../components/Gear';
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { TouchableOpacity } from 'react-native';
+import { useRecoilState } from 'recoil';
+import { dateState } from '../../Atom';
 
 
 function CalanderView() {
@@ -24,7 +26,8 @@ function CalanderView() {
 
   const navigation = useNavigation();
 
-  const [selectedTab, setSelectedTab] = useState()
+  const [selectedTab, setSelectedTab] = useState();
+  const [date, setDate] = useRecoilState(dateState);
 
   const posts = [
     {
@@ -73,15 +76,22 @@ function CalanderView() {
 
       <Calendar
         style={styles.calendar}
-        markedDates={markedSelectedDates}
+        // markedDates={markedSelectedDates}
         theme={{
           selectedDayBackgroundColor: 'red',
           arrowColor: '#009688',
           dotColor: '#009688',
           todayTextColor: '#009688',
         }}
-        // onDayPress={(day) => navigation.navigate(AuthRoutes.ToDo)}
-
+        onDayPress={(day) => {
+          setSelectedDate(() => {
+            return day.dateString;
+          });
+          setDate(() => {
+            return day.dateString;
+          });
+        }}
+       
         
         
       />
