@@ -14,6 +14,7 @@ import Logo from '../components/Logo';
 import { CheckBox } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
+import { Alert } from 'react-native';
 
 const SignUpScreen = () => {
   const [name, setName] = useState('');
@@ -81,7 +82,10 @@ const SignUpScreen = () => {
                 <Button
                   title={'중복확인'}
                   disabled={disabled2}
-                  onPress={onDuplicationCheck}
+                  onPress={() => {
+                    onDuplicationCheck,
+                      Alert.alert('중복 확인', '사용가능한 이메일입니다.');
+                  }}
                 />
               </View>
             </View>
@@ -102,7 +106,7 @@ const SignUpScreen = () => {
             onChangeText={(passwordCheck) =>
               setPasswordCheck(passwordCheck.trim())
             }
-            onSubmitEditing={onSubmit}
+            // onSubmitEditing={onSubmit}
           />
           <CheckBox
             title="이용약관 및 개인정보 정책에 동의합니다."
@@ -117,6 +121,7 @@ const SignUpScreen = () => {
               title={'회원가입'}
               onPress={() => {
                 onSubmit;
+                Alert.alert('Sign Up', '회원가입 성공');
                 navigation.navigate(AuthRoutes.SIGN_IN);
               }}
               disabled={disabled}
@@ -165,14 +170,14 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: '100%',
-    marginTop: 30,
+    marginTop: 10,
     paddingHorizontal: 20,
   },
   rowWrapper: {
     flexDirection: 'row',
   },
   textButton: {
-    marginTop: 30,
+    marginTop: 20,
     fontSize: 16,
     fontWeight: 'bold',
     marginHorizontal: 30,

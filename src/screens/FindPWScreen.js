@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
 import { useNavigation } from '@react-navigation/native';
+import { Alert } from 'react-native';
 
 const FindPWScreen = () => {
   const [name, setName] = useState('');
@@ -58,6 +59,7 @@ const FindPWScreen = () => {
               title={'비밀번호 찾기'}
               onPress={() => {
                 onSubmit;
+                Alert.alert('비밀번호 찾기', '고객님의 비밀번호는 1234입니다.');
                 navigation.goBack();
               }}
               disabled={disabled}

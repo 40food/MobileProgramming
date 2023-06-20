@@ -12,6 +12,7 @@ import Button from '../components/Button';
 import Logo from '../components/Logo';
 import { useNavigation } from '@react-navigation/native';
 import { AuthRoutes } from '../navigations/routes';
+import { Alert } from 'react-native';
 
 const ChangePWScreen = () => {
   const [name, setName] = useState('');
@@ -95,6 +96,7 @@ const ChangePWScreen = () => {
               title={'비밀번호 변경하기'}
               onPress={() => {
                 onSubmit;
+                Alert.alert('비밀번호 변경', '비밀번호 변경이 완료되었습니다.');
                 navigation.navigate(AuthRoutes.SIGN_IN);
               }}
               disabled={disabled}
