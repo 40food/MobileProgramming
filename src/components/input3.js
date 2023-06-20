@@ -13,7 +13,7 @@ export const ReturnKeyTypes = {
   NEXT: "next",
 };
 
-const Input2 = forwardRef(({ title, iconName, ...props }, ref) => {
+const Input3 = forwardRef(({ title, iconName, ...props }, ref) => {
   return (
     <View style={defaultStyles.container}>
       <Text style={defaultStyles.title}>{title}</Text>
@@ -35,13 +35,13 @@ const Input2 = forwardRef(({ title, iconName, ...props }, ref) => {
   );
 });
 
-Input2.displayName = "Input2";
+Input3.displayName = "Input3";
 
 const defaultStyles = StyleSheet.create({
   container: {
-    width: "50%",
+    width: "10%",
     // marginRight: 100,
-    marginRight: 20,
+    marginRight: 70,
     justifyContent: 'flex-start',
     marginLeft: 3,
     
@@ -51,12 +51,12 @@ const defaultStyles = StyleSheet.create({
     marginBottom: 17,
     fontWeight: "700",
     fontSize: 16,
-    width:'150%',
+    width:'10%',
     
   },
   input: {
     // flexDirection: "row",
-    borderBottomWidth: 2,
+    // borderBottomWidth: 2,
     // borderRadius: 1,
     // height: 15,
     // justifyContent: 'center'
@@ -73,4 +73,4 @@ const defaultStyles = StyleSheet.create({
   },
 });
 
-export default Input2;
+export default Input3;

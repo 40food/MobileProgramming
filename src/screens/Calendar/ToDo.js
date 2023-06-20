@@ -24,23 +24,25 @@ import {
     import React from 'react';
     import BottomSheet from './BottomSheet';
     import Button2 from '../../components/Button2';
-
+    import CheckBox2 from '../../components/CheckbBox2';
 
 
 
   const ToDo = (props) => {
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [disabled, setDisabled] = useState(true);
     const navigation = useNavigation();
+    const [todo, setTodo] = useState('');
   
     useEffect(() => {
-      setDisabled(!(email.trim() && password.trim()));
-    }, [email, password]);
+      setDisabled(!(todo.trim() && password.trim()));
+    }, [todo, password]);
+
+
   
     const onSubmit = () => {
       Keyboard.dismiss();
-      console.log(email, password);
     };
   
 
@@ -89,8 +91,8 @@ import {
              </View>
 
              <View style={styles.flexDirection}>
-
-            <CheckBox 
+    
+            <CheckBox
                 onPress={() => setShopping(!isShop)}
                 title="장보기"
                 isChecked={isShop}
@@ -130,21 +132,26 @@ import {
 
         <View style={{ flexDirection: 'row'}}>
 
-            <CheckBox
+            <View style={styles.aa}>
+            <CheckBox2 style={styles.aa}
                 onPress={() => setBlank(!isBlank)}
                 isChecked={isBlank}
+            
               />
+            </View>
 
+            <View style={{}}>
             <Input2 
                 keyboardType={KeyboardTypes.DEFAULT}
                 returnKeyType = {ReturnKeyTypes.NEXT}
-                value={email}
-                onChangeText = {(email) => setEmail(email.trim())}
+                value={todo}
+                onChangeText = {(todo) => setTodo(todo.trim())}
             />
+            </View>
 
         </View>
 
-             <View style={styles.m}>
+             <View style={styles.mm}>
             <Button style={styles.c} title= "완료" onPress ={() => navigation.navigate(AuthRoutes.CalendarView)}/>
 
             </View>
@@ -191,6 +198,8 @@ import {
     size: {
         fontSize:20,
         fontWeight: 'bold',
+        marginTop: 6,
+
         
     },
     round:{
@@ -255,6 +264,8 @@ import {
     },
     m: {
         marginTop: 250,
+        paddingHorizontal: 40,
+
     },
     c: {
         color:'#add8e6',
@@ -264,9 +275,22 @@ import {
         justifyContent: 'center',
         alignItems: 'center',
         margin: 40,
-    }
+        marginTop:1
+    },
+    aa:{
+        marginLeft: 35,
+    },
+    bb: {
+        // marginRight:,
+    },
+    mm: {
+        marginTop: 200,
+        paddingHorizontal: 40,
+
+    },
 
   });
   
   export default ToDo;
+
   

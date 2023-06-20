@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import Logo from './components/Logo';
+import CalanderView from './screens/Calendar/CalendarView';
+import SettingScreen from './screens/SettingScreen';
 import Navigation from './navigations/Navigation';
 import { RecoilRoot } from 'recoil';
 
@@ -9,7 +11,6 @@ export default function App() {
     <RecoilRoot>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Logo />
         <Navigation />
       </View>
     </RecoilRoot>

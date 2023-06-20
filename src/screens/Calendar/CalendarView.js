@@ -10,9 +10,12 @@ import { AuthRoutes } from '../../navigations/routes';
 import Day from 'react-native-calendars/src/calendar/day';
 import Logo from '../../components/Logo';
 import Gear from '../../components/Gear';
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { TouchableOpacity } from 'react-native';
+
 
 function CalanderView() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(0);
   const pressButton = () => {
     setModalVisible(true);
   };
@@ -20,6 +23,8 @@ function CalanderView() {
   <View style={styles.container}></View>;
 
   const navigation = useNavigation();
+
+  const [selectedTab, setSelectedTab] = useState()
 
   const posts = [
     {
@@ -47,6 +52,13 @@ function CalanderView() {
     },
   };
 
+  const options = [
+    { label: "할일", value: "todo", selectedBackgroundColor: "#0097e6",},
+    { label: "일기", value: "diary", },
+
+  
+  ];
+
   return (
     <View>
       <View style={styles3.cc}>
@@ -68,8 +80,51 @@ function CalanderView() {
           dotColor: '#009688',
           todayTextColor: '#009688',
         }}
-        onDayPress={(day) => navigation.navigate(AuthRoutes.ToDo)}
+        // onDayPress={(day) => navigation.navigate(AuthRoutes.ToDo)}
+        
       />
+
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+
+
+
+     <View style= {{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+        <View 
+            style={{
+              width: '50%',
+              height: 55,
+              backgroundColor:"#f5f5f5", 
+              borderWidth:0.5, 
+              borderRadius: 20, 
+              flexDirection: 'row',
+              justifyContent:'space-evenly',
+              alignItems: 'center', 
+              paddingLeft: 5, 
+              paddingRight: 5,}}>
+            <TouchableOpacity style= {{width: '38%',height: 40, backgroundColor: selectedTab==0? 'skyblue': '#f5f5f5', borderRadius: 30, justifyContent: 'center', alignItems: 'center'}}
+              onPress={()=>{
+                navigation.navigate(AuthRoutes.ToDo)
+                setSelectedTab(0);                
+              }}
+              >
+                
+              <Text style={{color: 'black', fontSize: 18}}>할일</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style= {{width: '38%',height: 40, backgroundColor: selectedTab==1? 'skyblue' : '#f5f5f5', borderRadius: 30, justifyContent: 'center', alignItems: 'center'}}
+              onPress={()=>{
+              setSelectedTab(1);
+              navigation.navigate(AuthRoutes.Diary3)
+
+            }}
+              >
+              <Text style={{color: 'black', fontSize: 18}}>일기</Text>
+            </TouchableOpacity>
+        </View>
+     </View>
 
       <View style={styles.container}></View>
     </View>
