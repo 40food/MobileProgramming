@@ -12,8 +12,8 @@ const AccountScreen = () => {
         <Text style={accountstyles.title}>계정</Text>
       </View>
       <View style={accountstyles.body}>
-        <Text style={accountstyles.menu}>이름</Text>
-        <Text style={accountstyles.menu}>id</Text>
+        <Text style={accountstyles.menu}>name</Text>
+        <Text style={accountstyles.menu}>yours@email.com</Text>
         <Text
           style={accountstyles.menu}
           onPress={() => navigation.navigate(AuthRoutes.Change_PW)}
