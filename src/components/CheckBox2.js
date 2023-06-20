@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
         // justifyContent: "flex-start",
         // alignItems: "center",
         flexDirection: "row",
-        width: 25,
-        marginTop: 28,
-        marginHorizontal: 8,
+        width: 20,
+        // marginTop: 0,
+        marginHorizontal: 5,
     },
     title: {
         fontSize: 18,

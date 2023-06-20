@@ -121,6 +121,9 @@ const BottomSheet = (props) => {
         },
       });
     };
+    // const pressDelete = () =>{
+    //   setDeleteVisible(true);
+    // }
   
     const handlePressDay = (pressedDate) => {
       setPressedDate(pressedDate);
@@ -128,6 +131,29 @@ const BottomSheet = (props) => {
         props.moveToSpecificYearAndMonth(pressedDate.year, pressedDate.month);
       }
     };
+    const deleteToDo = (key) => {
+      if(Platform.OS === "web"){
+        const ok = confirm("delete To do?");
+        if(ok){
+          const newToDos = { ...toDos }
+          delete newToDos[key]
+          setToDos(newToDos)
+          saveToDos(newToDos)
+        }
+      }
+      Alert.alert("ToDo삭제", "정말 삭제하시겠습니까?", [
+        { text: "취소" },
+        {
+          text: "네", onPress: async () => {
+            const newToDos = { ...toDos }
+            delete newToDos[key]
+            setToDos(newToDos)
+            await saveToDos(newToDos)
+          }
+        }
+      ]);
+    }
+    
   
     const onSwipeLeft = (gestureState) => {
       if (viewTotalDays === true) {
@@ -168,6 +194,7 @@ const BottomSheet = (props) => {
     const onSwipeDown = () => {
       setViewTotalDays(true);
     };
+    
   
 
     useEffect(()=>{
@@ -206,7 +233,10 @@ const BottomSheet = (props) => {
                         onPress={closeModal}
                         
                         ></Button2>
-                     <Button2 title="🗑삭제하기"></Button2>
+                     <Button2 
+                        title="🗑삭제하기">
+                     
+                        </Button2>
                      <Button2 title="🗑미완료 할일 삭제하기"></Button2>
                      <Button2 
                         title="📅날짜 바꾸기"
